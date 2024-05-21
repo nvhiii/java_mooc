@@ -19,19 +19,16 @@ public class RepeatingBreakingAndRemembering {
         while (true) {
 
             // prompt
-            int num = Integer.parseInt(scanner.nextLine());
+            int num = Integer.valueOf(scanner.nextLine());
 
             // break cond
-            if (num == 0) {
+            if (num == -1) {
                 break;
-            }
-
-            if (num < 0) {
-                continue;
             }
 
             runningSum += num;
             numCount++;
+
             if (num % 2 == 0) {
                 evenCount++;
             } else {
