@@ -1,35 +1,35 @@
-// Write a program that first reads book information from the user.
-// The details to be asked for each book include the title, the number 
-// of pages and the publication year. Entering an empty string as 
-// the name of the book ends the reading process.
 
 public class Book {
 
-    private String title;
-    private int pages;
+    private String name;
     private int publicationYear;
 
-    public Book(String title, int pages, int publicationYear) {
-        this.title = title;
-        this.pages = pages;
+    public Book(String name, int publicationYear) {
+        this.name = name;
         this.publicationYear = publicationYear;
     }
 
-    public String getTitle() {
-        return this.title;
+    public String getName() {
+        return name;
     }
 
-    public int getPages() {
-        return this.pages;
+    public int getPublicationYear() {
+        return publicationYear;
     }
 
-    public int publicationYear() {
-        return this.publicationYear;
+    public boolean equals(Object compared) {
+
+        if (this == compared) {
+            return true;
+        }
+
+        if (!(compared instanceof Book)) {
+            return false;
+        }
+
+        Book comparedCast = (Book) compared;
+        return this.name.equals(comparedCast.name) && this.publicationYear == comparedCast.publicationYear;
+
     }
 
-    @Override
-    public String toString() {
-        return this.title + ", " + this.pages + " pages, " + this.publicationYear;
-    }
-    
 }
