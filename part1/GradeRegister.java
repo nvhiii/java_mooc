@@ -18,7 +18,6 @@
 // the average of the exam points. If there are no points added to the 
 // register, the method should return the number -1.
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class GradeRegister {
