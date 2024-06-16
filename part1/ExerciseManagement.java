@@ -1,29 +1,33 @@
 import java.util.ArrayList;
 
-public class ExerciseManagement {
-
-    private ArrayList<String> em;
-    private ArrayList<String> completedExercises;
-
+public class ExerciseManagement{
+    private ArrayList<Exercise> exercises;
     public ExerciseManagement() {
-        this.em = new ArrayList<>();
-        this.completedExercises = new ArrayList<>();
+        this.exercises = new ArrayList<>();
     }
-
     public ArrayList<String> exerciseList() {
-        return this.em;
+        ArrayList<String> list = new ArrayList<>();
+        for (Exercise exercise: exercises) {
+            list.add(exercise.getName());
+        }
+        return list;
     }
-
-    public void add(String x) {
-        this.em.add(x);
+    public void add(String exercisea) {
+        this.exercises.add(new Exercise(exercisea));
     }
-
     public void markAsCompleted(String exercise) {
-        this.completedExercises.add(exercise);
+        for (Exercise ex: exercises) {
+            if (ex.getName().equals(exercise)) {
+                ex.setCompleted(true);
+            }
+        }
     }
-
     public boolean isCompleted(String exercise) {
-        return this.completedExercises.contains(exercise);
+        for (Exercise ex: exercises) {
+            if (ex.getName().equals(exercise)) {
+                return ex.isCompleted();
+            }
+        }
+        return false;
     }
-
 }
