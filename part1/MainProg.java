@@ -59,68 +59,70 @@
 
 public class MainProg {
 
-    public static void main(String[] args) {
-        // write your test code here
-        int[] array = {3, 1, 5, 99, 3, 12};
-    }
-
     public static int smallest(int[] array) {
 
-        // first set first index to iterate as smallest and compare incrementally
-        int smallest = array[0];
+        int smallNum = array[0];
 
         for (int num : array) {
 
-            if (num < smallest) {
-                smallest = num;
+            if (num < smallNum) {
+
+                smallNum = num;
+
             }
 
         }
 
-        return smallest;
+        return smallNum;
 
     }
 
     public static int indexOfSmallest(int[] array) {
 
-        int idxSmallest = 0;
-        int smallest = array[0];
+        int smallest = smallest(array); // logic returns smallest of array
+        int smallestIndex = 0;
 
         for (int i = 0; i < array.length; i++) {
 
-            if (array[i] < smallest) {
-                idxSmallest = i;
-                smallest = array[i];
+            if (array[i] == smallest) {
+
+                smallestIndex = i;
+
             }
 
         }
 
-        return idxSmallest;
+        return smallestIndex;
+        
 
     }
 
-    public static int indexOfSmallestFrom(int[] array, int startIndex) {
+    public static int indexOfSmallestFrom(int[] table, int startIndex) {
 
-        int smallest = array[startIndex];
-        int index = startIndex;
+        // use for loop to indicate index
+        
+        int smallest = table[startIndex];
+        int smallestIdx = startIndex;
 
-        for (int i = startIndex; i < array.length; i++) {
+        for (int i = startIndex; i < table.length; i++) {
 
-            if (array[i] < smallest) {
-                smallest = array[i];
-                index = i;
+            if (table[i] < smallest) {
+
+                smallest = table[i];
+                smallestIdx = i;
+
             }
 
         }
 
-        return index;
+        return smallestIdx;
 
     }
 
     public static void swap(int[] array, int index1, int index2) {
 
-        int temp = array[index1]; // first store val of idx1
-        array[index1] = array[index2]; // sets val of idx 1 to idx 2
+        int temp = array[index1]; // stores val at index1
+        array[index1] = array[index2];
         array[index2] = temp;
 
     }
@@ -129,9 +131,7 @@ public class MainProg {
 
         for (int i = 0; i < array.length; i++) {
 
-            // starting index and smallest num swap
             swap(array, i, indexOfSmallestFrom(array, i));
-            // problem is that the array is still being read entirely -- fixed
 
         }
 
