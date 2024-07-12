@@ -37,7 +37,10 @@ public class RecipeSearch {
         // list cmds
         System.out.println("Commands:\n" +
                             "list - lists the recipes\n" +
-                            "stop - stops the program\n");
+                            "stop - stops the program\n" + 
+                            "find name - searches recipes by name\n" +
+                            "find cooking time - searches recipes by cooking time\n" +
+                            "find ingredient - searches recipes by ingredient\n");
 
         // read n store values in file in recipes obj
         try (Scanner fileReader = new Scanner(Paths.get(fileName))) {
@@ -94,7 +97,29 @@ public class RecipeSearch {
             }
 
             if (cmd.equals("list")) {
+
                 recipes.print();
+
+            } else if (cmd.equals("find name")) {
+
+                System.out.println("Searched word: ");
+                String word = scanner.nextLine();
+                recipes.find(word);
+                
+            } else if (cmd.equals("find cooking time")) { 
+
+                System.out.println("Max cooking time");
+                int cookingTime = Integer.valueOf(scanner.nextLine());
+                recipes.recipesMaxtime(cookingTime);
+
+            } else if (cmd.equals("find ingredient")) {
+
+                System.out.println("Ingredient:");
+                String ing = scanner.nextLine();
+                recipes.findByIngredient(ing);
+            
+            } else {
+                continue;
             }
 
 

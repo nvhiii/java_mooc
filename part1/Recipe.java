@@ -15,6 +15,19 @@ public class Recipe {
 
     }
 
+    // getters
+    public String getRecipeName() {
+        return this.recipeName;
+    }
+
+    public int getCookingTime() {
+        return this.cookingTime;
+    }
+
+    public ArrayList<String> getIngredients() {
+        return this.ingredients;
+    }
+
     @Override
     public String toString() {
         return this.recipeName + ", cooking time: " + this.cookingTime;

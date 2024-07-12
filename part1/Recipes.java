@@ -23,5 +23,41 @@ public class Recipes {
         }
 
     }
+
+    public void find(String name) {
+
+        for (Recipe r : recipes) {
+
+            if (r.getRecipeName().contains(name)) {
+                System.out.println(r);
+            }
+
+        }
+
+    }
+
+    public void recipesMaxtime(int time) {
+
+        for (Recipe r : recipes) {
+
+            if (r.getCookingTime() <= time) {
+                System.out.println(r);
+            }
+
+        }
+
+    }
     
-}
+    public void findByIngredient(String ingredient) {
+
+        for (Recipe r : recipes) {
+
+            if (r.getIngredients().contains(ingredient)) {
+                System.out.println(r);
+            }
+
+        }
+
+    }
+
+}   
