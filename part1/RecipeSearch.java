@@ -18,6 +18,30 @@
 // only enters files that exist. Below we assume that the example recipes given 
 // earlier in the exercise description are stored in the file recipes.txt.
 
+// Part 2
+// Finding recipes by name
+// Make it possible to find recipes by their names. Finding by name is done with the 
+// command find name, after which the user is asked for the name that is used to 
+// search. The search should print all the recipes whose names contain the string 
+// given by the user.
+
+// Part 3
+// Searching for recipes by cooking time
+// Next, implement the possibility to find recipes based on their cooking time. This 
+// is done with the command find cooking time, after which the user is asked for 
+// the longest acceptable cooking time. The program should react by printing all 
+// the recipes whose cooking times don't exceed the cooking time given by the user 
+// (so equal or less time).
+
+// Part 4
+// Finding recipes based on their ingredients
+// Finally, add the functionality to search for recipes based on their ingredients. 
+// This is done by choosing the command find ingredient, after which the user is asked 
+// for a string. The program should then print all the recipes that contain the 
+// specified string. Notice that with this option the given string must match exactly 
+// the ingredient that is searched for (e.g. "ugar" will return different results than 
+// "sugar").
+
 import java.util.Scanner;
 import java.nio.file.Paths;
 import java.util.ArrayList;
