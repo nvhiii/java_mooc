@@ -31,7 +31,7 @@
 
 import java.util.Scanner;
 
-public class LiquidContainers {
+public class LiquidContainerMain {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);

@@ -1,4 +1,4 @@
-public // Write a program that asks the user for a string. If 
+// Write a program that asks the user for a string. If 
 // the user writes the string "true", the program prints 
 // "You got it right!", otherwise it prints "Try again!".
 
@@ -24,7 +24,4 @@ public class IsItTrue {
         }
 
     }
-}
- IsItTrue {
-    
 }

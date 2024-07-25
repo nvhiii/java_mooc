@@ -1,12 +1,12 @@
 
 import java.util.ArrayList;
 
-public class SimpleCollection2 {
+public class SImpleCollection2 {
 
     private String name;
     private ArrayList<String> elements;
 
-    public SimpleCollection2(String name) {
+    public SImpleCollection2(String name) {
         this.name = name;
         this.elements = new ArrayList<>();
     }
