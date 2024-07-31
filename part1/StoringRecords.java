@@ -52,7 +52,7 @@ public class StoringRecords {
                 String name = split[0];
                 int age = Integer.valueOf(split[1]);
 
-                persons.add(new Person(name, age));
+                persons.add(new Person3(name, age));
 
             }
 
